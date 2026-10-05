@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AircraftList } from "./aircraft/AircraftList";
 import { Flights } from "./flight/FlightList";
+import { DEFAULT_VIEW } from "../configs/map-config";
 
 const tabs = [
   { id: "aircraft", label: "Aircrafts" },
@@ -40,7 +41,11 @@ export function Sidebar() {
             </button>
           ))}
         </div>
-        <p className="sidebar-disclaimer">In last 12 hours</p>
+        <p className="sidebar-disclaimer">
+          Aircraft and flights recorded in our database during current day, near
+          latitude {DEFAULT_VIEW.latitude.toFixed(4)}°, longitude{" "}
+          {DEFAULT_VIEW.longitude.toFixed(4)}°.
+        </p>
         {activeTab === null && (
           <div className="sidebar-overview">
             <h2>Recent activity</h2>
