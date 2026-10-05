@@ -1,0 +1,90 @@
+.aircraft-flights {
+  margin-top: 16px;
+  border-top: 1px solid #20344212;
+}
+
+.aircraft-flights-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 0;
+  border: 0;
+  background: transparent;
+  color: #285f85;
+  font: 600 13px/1.5 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.aircraft-flights-toggle:hover {
+  color: #147ac2;
+}
+
+.aircraft-flights-toggle:focus-visible,
+.aircraft-flights-error button:focus-visible {
+  outline: 2px solid #3399ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.aircraft-flights-content {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 4px;
+}
+
+.aircraft-flights-content .pagination {
+  position: static;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.aircraft-flight-card {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #20344212;
+  border-radius: 10px;
+  background: #f5f8fa;
+  font-size: 12px;
+}
+
+.aircraft-flight-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.aircraft-flight-heading h4 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #285f85;
+  font-size: 14px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.aircraft-flight-heading span {
+  color: #566775;
+  font-variant-numeric: tabular-nums;
+}
+
+.aircraft-flights-error {
+  padding: 12px;
+  text-align: center;
+}
+
+.aircraft-flights-error button {
+  padding: 8px 12px;
+  border: 1px solid #20344220;
+  border-radius: 8px;
+  background: #fff;
+  color: #285f85;
+  font: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,38 @@
+.aircraft-popup .maplibregl-popup-content {
+  min-width: 210px;
+  padding: 16px;
+  border-radius: 10px;
+  color: #172554;
+  font: 13px/1.5 system-ui, sans-serif;
+  box-shadow: 0 4px 20px #0003;
+}
+
+.aircraft-popup h2 {
+  margin: 0 20px 10px 0;
+  font-size: 16px;
+}
+
+.aircraft-popup dl {
+  margin: 0;
+}
+
+.aircraft-popup dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 2px 0;
+}
+
+.aircraft-popup dt {
+  color: #64748b;
+}
+
+.aircraft-popup dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.aircraft-popup .maplibregl-popup-close-button {
+  padding: 2px 8px;
+  font-size: 20px;
+}

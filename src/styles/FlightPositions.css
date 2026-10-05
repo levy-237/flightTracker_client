@@ -1,0 +1,80 @@
+.flight-positions {
+  margin-top: 16px;
+  border-top: 1px solid #20344212;
+}
+
+.positions-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 0;
+  border: 0;
+  background: transparent;
+  color: #285f85;
+  font:
+    600 13px/1.5 system-ui,
+    sans-serif;
+  cursor: pointer;
+}
+
+.positions-toggle:hover {
+  color: #147ac2;
+}
+
+.positions-toggle:focus-visible,
+.positions-error button:focus-visible {
+  outline: 2px solid #3399ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.positions-content {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.positions-content .pagination {
+  position: static;
+  padding: 8px;
+}
+
+.positions-content .pagination-controls {
+  font-size: 12px;
+}
+
+.positions-content .pagination-controls button {
+  padding: 6px;
+}
+
+.position-card {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #20344212;
+  border-radius: 10px;
+  background: #f5f8fa;
+  font-size: 12px;
+}
+
+.position-time {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #285f85;
+}
+
+.positions-error {
+  padding: 12px;
+  text-align: center;
+}
+
+.positions-error button {
+  padding: 8px 12px;
+  border: 1px solid #20344220;
+  border-radius: 8px;
+  background: #fff;
+  color: #285f85;
+  font: inherit;
+  cursor: pointer;
+}
