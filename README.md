@@ -1,10 +1,68 @@
 # Flight Tracker
 
-Run `npm install` and `npm run dev` to start the app.
+**This website is under active development.** Features and the interface are still evolving.
 
-Configure the initial map view and reset destination in `.env` using `VITE_MAP_DEFAULT_LONGITUDE`, `VITE_MAP_DEFAULT_LATITUDE`, `VITE_MAP_DEFAULT_ZOOM`, `VITE_MAP_DEFAULT_BEARING`, and `VITE_MAP_DEFAULT_PITCH`. All five values must be finite numbers. Restart the development server after editing them; rebuild for production changes.
+Flight Tracker lets you explore live aircraft activity on an interactive satellite map and browse flight data supplied by a connected backend. It is built with React, TypeScript, Vite, and MapLibre.
 
-The page displays a MapLibre map centered near Vienna using Esri World Imagery satellite tiles. On load, it connects to `ws://localhost:8080/ws`, subscribes to `/topic/flights`, and validates incoming aircraft arrays with Zod. Each broadcast updates a GeoJSON source and logs the parsed data in the browser console. Aircraft icons rotate by `track`, defaulting to north when the value is null. Start the backend on port 8080 to receive messages. The map style requires internet access.
+## What you can do now
 
-Run `npm run build` to build and `npm run lint` to check the code.
-# flightTracker_client
+- View aircraft positions updated through a live WebSocket connection, with icons indicating their direction of travel.
+- Click an aircraft on the map to see its callsign, registration, type, altitude, ground speed, track, and vertical rate when available.
+- Browse paginated aircraft and flight lists in the sidebar.
+- Expand an aircraft's Flights dropdown to see its recorded flights.
+- Expand a flight's Positions dropdown to browse recorded coordinates, timestamps, and flight measurements.
+- Pan and zoom the map, collapse the sidebar, and reset the map to the configured starting view.
+
+The lists include loading indicators and empty states, and the dropdowns offer retry controls when a request fails. Available aircraft, flights, and history depend on the connected backend.
+
+## Coming next
+
+Planned features include:
+
+- **Authentication and user accounts** for a personalized experience.
+- **Tracking specific flights** with a dedicated view that follows a selected flight on the map.
+- **Saved flights and aircraft** for quick access to favorites.
+- **Search and filters** to make finding aircraft and flights easier.
+- **Flight paths and history on the map** to explore where a flight has traveled.
+
+These features are not available yet. The roadmap may change as development continues.
+
+## Run locally
+
+Install dependencies:
+
+```sh
+npm install
+```
+
+Create a `.env` file in the project root. The following values are an example for a local backend and a map centered near Vienna:
+
+```dotenv
+VITE_AIRCRAFTS_API_URL=http://localhost:8080/aircrafts
+VITE_FLIGHTS_API_URL=http://localhost:8080/flights
+VITE_BROKER_URL=ws://localhost:8080/ws
+VITE_MAP_DEFAULT_LONGITUDE=16.3738
+VITE_MAP_DEFAULT_LATITUDE=48.2082
+VITE_MAP_DEFAULT_ZOOM=8
+VITE_MAP_DEFAULT_BEARING=0
+VITE_MAP_DEFAULT_PITCH=0
+```
+
+Adjust the URLs to match your backend, including any API prefix. The client subscribes to `/topic/flights` for live updates. All five map settings must be finite numbers. Map tiles are provided by Esri and require internet access.
+
+Start the backend, then start the frontend:
+
+```sh
+npm run dev
+```
+
+Restart the development server after changing `.env`, or rebuild for production changes. The `.env` file is ignored by Git. Variables prefixed with `VITE_` are exposed to the browser, so they must not contain secrets.
+
+## Development commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server. |
+| `npm run build` | Type-check and create a production build. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run lint` | Run ESLint. |
