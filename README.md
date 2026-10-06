@@ -2,11 +2,13 @@
 
 **This website is under active development.** Features and the interface are still evolving.
 
-Flight Tracker lets you explore live aircraft activity on an interactive satellite map and browse flight data supplied by a connected backend. It is built with React, TypeScript, Vite, and MapLibre.
+Flight Tracker lets you explore live aircraft activity on an interactive satellite map and browse recorded flight data. The frontend is built with React, TypeScript, Vite, and MapLibre, and connects to our Spring Boot API.
+
+Aircraft locations on the map update every 30 seconds via WebSocket messages from the API. Aircraft, flights, and flight positions are stored in our database and served by the Spring Boot API. On initial load, live aircraft data on the map may take up to 20 seconds to appear while the server resumes from inactivity.
 
 ## What you can do now
 
-- View aircraft positions updated through a live WebSocket connection, with icons indicating their direction of travel.
+- View aircraft locations updated every 30 seconds through a WebSocket connection, with icons indicating their direction of travel.
 - Click an aircraft on the map to see its callsign, registration, type, altitude, ground speed, track, and vertical rate when available.
 - Browse paginated aircraft and flight lists in the sidebar.
 - Expand an aircraft's Flights dropdown to see its recorded flights.

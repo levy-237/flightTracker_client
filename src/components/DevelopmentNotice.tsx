@@ -25,6 +25,11 @@ export function DevelopmentNotice() {
             aircraft data on the map may take up to 20 seconds to appear while
             the server resumes from inactivity.
           </p>
+          <p>
+            Aircraft locations on the map update every 30 seconds via WebSocket
+            messages from our Spring Boot API. Aircraft, flights, and flight
+            positions are stored in our database and served by the API.
+          </p>
           <button type="button" onClick={() => closeToast(true)}>
             Got it
           </button>

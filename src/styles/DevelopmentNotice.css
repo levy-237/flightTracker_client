@@ -7,7 +7,7 @@
 
 .website-notices .website-notice {
   width: 100%;
-  padding: 16px 48px 16px 18px;
+  padding: 16px 18px;
   border: 1px solid #d6dde3;
   border-radius: 8px;
   background: #fff;
@@ -16,8 +16,13 @@
   font: 400 13px/1.5 system-ui, sans-serif;
 }
 
+.development-notice {
+  width: 100%;
+}
+
 .development-notice h2 {
   margin: 0 0 4px;
+  padding-right: 30px;
   font-size: 13px;
   font-weight: 600;
   line-height: 1.5;
@@ -28,19 +33,31 @@
   color: #566775;
 }
 
+.development-notice p + p {
+  margin-top: 10px;
+}
+
 .development-notice button {
-  margin-top: 12px;
-  padding: 7px 14px;
-  border: 1px solid #d6dde3;
-  border-radius: 4px;
-  background: #f4f6f8;
-  color: #203442;
-  font: 600 12px/1.5 system-ui, sans-serif;
+  display: block;
+  min-width: 112px;
+  min-height: 40px;
+  margin: 18px auto 0;
+  padding: 9px 24px;
+  border: 1px solid #203442;
+  border-radius: 6px;
+  background: #203442;
+  color: #fff;
+  font: 600 13px/1.5 system-ui, sans-serif;
   cursor: pointer;
 }
 
 .development-notice button:hover {
-  background: #e8edf1;
+  background: #345366;
+  border-color: #345366;
+}
+
+.development-notice button:active {
+  background: #162732;
 }
 
 .website-notice .Toastify__close-button {
