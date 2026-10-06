@@ -47,8 +47,6 @@ VITE_MAP_DEFAULT_BEARING=0
 VITE_MAP_DEFAULT_PITCH=0
 ```
 
-Adjust the URLs to match your backend, including any API prefix in `VITE_API_URL`, without a trailing slash. The client appends the aircraft and flight endpoint paths to this base URL. The client subscribes to `/topic/flights` for live updates. All five map settings must be finite numbers. Map tiles are provided by Esri and require internet access.
-
 Start the backend, then start the frontend:
 
 ```sh
@@ -59,9 +57,9 @@ Restart the development server after changing `.env`, or rebuild for production 
 
 ## Development commands
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the development server. |
-| `npm run build` | Type-check and create a production build. |
-| `npm run preview` | Preview the production build locally. |
-| `npm run lint` | Run ESLint. |
+| Command           | Purpose                                   |
+| ----------------- | ----------------------------------------- |
+| `npm run dev`     | Start the development server.             |
+| `npm run build`   | Type-check and create a production build. |
+| `npm run preview` | Preview the production build locally.     |
+| `npm run lint`    | Run ESLint.                               |

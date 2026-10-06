@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { SidebarExpandButton } from "./SidebarExpandButton";
+import { SidebarToggleButton } from "./SidebarToggleButton";
 import { AircraftList } from "./aircraft/AircraftList";
 import { Flights } from "./flight/FlightList";
 import { DEFAULT_VIEW } from "../configs/map-config";
+import "../styles/Sidebar.css";
 
 const tabs = [
   { id: "aircraft", label: "Aircrafts" },
@@ -10,12 +13,13 @@ const tabs = [
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [activeTab, setActiveTab] = useState<"aircraft" | "flight" | null>(
     null,
   );
 
   return (
-    <>
+    <div className={`sidebar-layout${isExpanded ? " sidebar-layout--expanded" : ""}`}>
       <aside
         id="sidebar"
         className="sidebar"
@@ -94,29 +98,16 @@ export function Sidebar() {
           </div>
         ))}
       </aside>
-      <button
-        type="button"
-        className="sidebar-toggle"
-        aria-label={isOpen ? "Collapse sidebar" : "Open sidebar"}
-        aria-expanded={isOpen}
-        aria-controls="sidebar"
-        onClick={() => setIsOpen((open) => !open)}
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          aria-hidden="true"
-        >
-          <path
-            d={isOpen ? "M6 6l12 12M6 18L18 6" : "M4 6h16M4 12h16M4 18h16"}
-          />
-        </svg>
-      </button>
-    </>
+      {isOpen && (
+        <SidebarExpandButton
+          isExpanded={isExpanded}
+          onToggle={() => setIsExpanded((expanded) => !expanded)}
+        />
+      )}
+      <SidebarToggleButton
+        isOpen={isOpen}
+        onToggle={() => setIsOpen((open) => !open)}
+      />
+    </div>
   );
 }
