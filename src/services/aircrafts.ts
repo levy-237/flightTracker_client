@@ -1,3 +1,4 @@
+import { API_URL } from "../configs/api-config";
 import { aircraftListSchema } from "../schemas/aircraft";
 import type { PaginationParams } from "../types/pagination";
 
@@ -10,7 +11,7 @@ export async function fetchAircrafts(
     size: String(size),
   });
   const response = await fetch(
-    `${import.meta.env.VITE_AIRCRAFTS_API_URL}?${searchParams}`,
+    `${API_URL}/aircrafts?${searchParams}`,
     { signal },
   );
   if (!response.ok) throw new Error(`HTTP ${response.status}`);

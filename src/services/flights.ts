@@ -1,3 +1,4 @@
+import { API_URL } from "../configs/api-config";
 import { flightListSchema } from "../schemas/flight";
 import type { PaginationParams } from "../types/pagination";
 import type { FlightList } from "../types/flight";
@@ -11,9 +12,8 @@ export async function fetchAircraftFlights(
     page: String(Math.max(1, page)),
     size: String(size),
   });
-  const baseUrl = import.meta.env.VITE_AIRCRAFTS_API_URL.replace(/\/$/, "");
   const response = await fetch(
-    `${baseUrl}/${aircraftId}/flights?${searchParams}`,
+    `${API_URL}/aircrafts/${aircraftId}/flights?${searchParams}`,
     { signal },
   );
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -29,7 +29,7 @@ export async function fetchFlights(
     size: String(size),
   });
   const response = await fetch(
-    `${import.meta.env.VITE_FLIGHTS_API_URL}?${searchParams}`,
+    `${API_URL}/flights?${searchParams}`,
     { signal },
   );
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
