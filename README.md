@@ -38,7 +38,7 @@ npm install
 Create a `.env` file in the project root. The following values are an example for a local backend and a map centered near Vienna:
 
 ```dotenv
-VITE_API_URL=http://localhost:8080/api/
+VITE_API_URL=http://localhost:8080/api
 VITE_BROKER_URL=ws://localhost:8080/ws
 VITE_MAP_DEFAULT_LONGITUDE=16.3738
 VITE_MAP_DEFAULT_LATITUDE=48.2082
@@ -47,7 +47,7 @@ VITE_MAP_DEFAULT_BEARING=0
 VITE_MAP_DEFAULT_PITCH=0
 ```
 
-Adjust the URLs to match your backend, including any API prefix in `VITE_API_URL`. The client appends the aircraft and flight endpoint paths to this base URL; a trailing slash is optional. The client subscribes to `/topic/flights` for live updates. All five map settings must be finite numbers. Map tiles are provided by Esri and require internet access.
+Adjust the URLs to match your backend, including any API prefix in `VITE_API_URL`, without a trailing slash. The client appends the aircraft and flight endpoint paths to this base URL. The client subscribes to `/topic/flights` for live updates. All five map settings must be finite numbers. Map tiles are provided by Esri and require internet access.
 
 Start the backend, then start the frontend:
 
