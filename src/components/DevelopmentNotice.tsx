@@ -18,15 +18,12 @@ export function DevelopmentNotice() {
     toast.info(
       ({ closeToast }) => (
         <div className="development-notice">
-          <h2>Initial loading</h2>
-          <p>
-            Live aircraft data on the map may take up to 20 seconds to appear
-            while the server resumes from inactivity.
-          </p>
           <h2>Under active development</h2>
           <p>
-            Flight Tracker is a portfolio project under active development. Some
-            features are incomplete, and you may encounter errors.
+            Flight Tracker is a project under active development. Some features
+            are incomplete, and you may encounter errors. On initial load, live
+            aircraft data on the map may take up to 20 seconds to appear while
+            the server resumes from inactivity.
           </p>
           <button type="button" onClick={() => closeToast(true)}>
             Got it

@@ -28,10 +28,6 @@
   color: #566775;
 }
 
-.development-notice p + h2 {
-  margin-top: 12px;
-}
-
 .development-notice button {
   margin-top: 12px;
   padding: 7px 14px;
