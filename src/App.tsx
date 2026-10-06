@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { AircraftMap } from "./components/aircraft/AircraftMap";
 import { Sidebar } from "./components/Sidebar";
 import { DevelopmentNotice } from "./components/DevelopmentNotice";
@@ -8,6 +9,7 @@ function App() {
       <AircraftMap />
       <Sidebar />
       <DevelopmentNotice />
+      <Analytics />
     </>
   );
 }
