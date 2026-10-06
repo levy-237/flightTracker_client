@@ -1,0 +1,94 @@
+.Toastify__toast-container.website-notices {
+  top: max(20px, env(safe-area-inset-top));
+  left: 50%;
+  width: min(360px, calc(100vw - 32px));
+  transform: translateX(-50%);
+}
+
+.website-notices .website-notice {
+  width: 100%;
+  padding: 16px 48px 16px 18px;
+  border: 1px solid #d6dde3;
+  border-radius: 8px;
+  background: #fff;
+  color: #203442;
+  box-shadow: 0 3px 12px #1018201f;
+  font: 400 13px/1.5 system-ui, sans-serif;
+}
+
+.development-notice h2 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.development-notice p {
+  margin: 0;
+  color: #566775;
+}
+
+.development-notice p + h2 {
+  margin-top: 12px;
+}
+
+.development-notice button {
+  margin-top: 12px;
+  padding: 7px 14px;
+  border: 1px solid #d6dde3;
+  border-radius: 4px;
+  background: #f4f6f8;
+  color: #203442;
+  font: 600 12px/1.5 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.development-notice button:hover {
+  background: #e8edf1;
+}
+
+.website-notice .Toastify__close-button {
+  display: grid;
+  place-items: center;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  color: #566775;
+  opacity: 1;
+}
+
+.website-notice .Toastify__close-button:hover {
+  background: #2034420a;
+}
+
+.website-notice button:focus-visible {
+  outline: 2px solid #3399ff;
+  outline-offset: 3px;
+}
+
+.notice-enter {
+  animation: notice-in 220ms ease-out both;
+}
+
+.notice-exit {
+  animation: notice-out 160ms ease-in both;
+}
+
+@keyframes notice-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes notice-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notice-enter,
+  .notice-exit {
+    animation-duration: 1ms;
+  }
+}
