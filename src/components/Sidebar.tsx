@@ -19,7 +19,9 @@ export function Sidebar() {
   );
 
   return (
-    <div className={`sidebar-layout${isExpanded ? " sidebar-layout--expanded" : ""}`}>
+    <div
+      className={`sidebar-layout${isExpanded ? " sidebar-layout--expanded" : ""}`}
+    >
       <aside
         id="sidebar"
         className="sidebar"
@@ -60,7 +62,6 @@ export function Sidebar() {
             >
               <span>
                 <strong>Aircrafts</strong>
-                <span>Aircraft seen in the last 12 hours.</span>
               </span>
               <span className="sidebar-option-arrow" aria-hidden="true">
                 ↗
@@ -73,7 +74,7 @@ export function Sidebar() {
             >
               <span>
                 <strong>Flights</strong>
-                <span>Flight activity from the same period.</span>
+                <span>Flight activity from today.</span>
               </span>
               <span className="sidebar-option-arrow" aria-hidden="true">
                 ↗
