@@ -6,6 +6,8 @@ Flight Tracker lets you explore live aircraft activity on an interactive satelli
 
 Aircraft locations on the map update every 30 seconds via WebSocket messages from the API. Aircraft, flights, and flight positions are stored in our database and served by the Spring Boot API. On initial load, live aircraft data on the map may take up to 20 seconds to appear while the server resumes from inactivity.
 
+If the server is sleeping or the connection drops, the map automatically keeps retrying: delays start at 2 seconds and double up to 30 seconds between attempts. Each connection attempt times out after 30 seconds. Successful reconnections restore the flight subscription; the last received aircraft remain visible while reconnecting. Heartbeats detect stalled connections when supported by the server.
+
 ## What you can do now
 
 - View aircraft locations updated every 30 seconds through a WebSocket connection, with icons indicating their direction of travel.
